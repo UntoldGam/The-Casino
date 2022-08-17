@@ -1,0 +1,8 @@
+class styles:
+	RESET="\033[00m"
+	SUCCESS="\033[92m"
+	FAILURE="\033[31m"
+	BLUE="\033[34m"
+	LIGHT_BLUE="\033[0;30;44m"
+	BLUETEXT="\033[0;36;40m"
+	UNDERLINE='\033[04m'

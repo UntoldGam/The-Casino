@@ -1,0 +1,85 @@
+        def numberchoice():
+            shuffle(cards)
+            card1 = cards[randrange(0, len(cards))]
+            card2 = cards[randrange(0, len(cards))]
+            newCard1 = int(card1)
+            newCard2 = int(card2)
+            return newCard1 + newCard2
+
+        goal = numberchoice()
+
+        def showCards():
+            title = "DECK"
+            goalNumber = "\nGoal: "+str(goal)
+            mCText = "\nYour deck: "
+            memberHand = 0
+
+            for card in memberCards:
+                mCText += f"{str(card)},"
+                memberHand += int(card)
+
+            memberHandString = f"\nYour Hand: {str(memberHand)}"
+
+            finalPrint = title + goalNumber + mCText + memberHandString
+            print(finalPrint+"\n")
+
+            DText = "\nThe Dealer's Deck: "
+            dealerHand = 0
+
+            for card in dealerCards:
+                DText += str(card) + " "
+                dealerHand += int(card)
+
+            dealerHandString = "\n The Dealer's hand: "+str(dealerHand)
+
+            finalPrint = title + goalNumber + DText + dealerHandString
+            print(finalPrint+"\n")
+
+        def addCardToMember():
+            shuffle(cards)
+            card = cards[randrange(0, len(cards))]
+            memberCards.append(card)
+            showCards()
+
+        def dealCards():
+            # MEMBER
+            shuffle(cards)
+            memberCard = cards[randrange(0, len(cards))]
+            memberCards.append(memberCard)
+            # DEALER
+            shuffle(cards)
+            dealerCard = cards[randrange(0, len(cards))]
+            dealerCards.append(dealerCard)
+            showCards()
+
+        def playerchoice():
+            dealCards()  # ONLY TO BE USED AT THE START OF THE GAME
+
+            def ask():
+                choice = input("Do you wish to (H)it, (S)tand or (D)ouble? ")
+                return choice
+
+            choice = ask()
+            if choice.upper() == "H":
+                addCardToMember()
+                # dealerChoice() = check value against member value shuffle(cards) in dealerChoice
+                # resultOfChoices() = shows the deck, if you're way over the goal (over 1 number away) then it ends the game and restarts the choice (return "Finished" in main.py then redo the choice function)
+
+            elif choice.upper() == "D":
+                addCardToMember()
+                playerhand = 0
+                for card in memberCards:
+                    playerhand += int(card)
+
+                if playerhand >= goal and playerhand < goal + 1:
+                    print("DOUBLING")
+                    #print("You win!")
+                    #giveMoney(member, bet * 2)
+                else:
+                    print("You lose \nYour hand was "+str(playerhand) + \
+                          " the goal was "+str(goal)+"\n")
+            elif choice.upper() == "S":
+                # only handle the dealers side of the game
+                # if
+                print("STANDING")
+        playerchoice()

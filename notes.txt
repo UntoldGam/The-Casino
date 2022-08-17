@@ -1,0 +1,9 @@
+https://cloud.mongodb.com/v2/62af77741c88cb03dca8207f#metrics/replicaSet/62af77d8b338945effb4a024/explorer/CasinoDatabase/CasinoMembers/find
+
+db link 
+login with outlook (pass is in the url env)
+
+use https://gist.github.com/StephanieSunshine/d34039857566d957f26cea8277b3ac65 for referencing
+
+
+finalise backend work + database cleanup (optimise code performance and general appearance)
