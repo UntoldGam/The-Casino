@@ -1,6 +1,6 @@
 # main imports
 
-#from os import environ
+#from url import mongoUrl
 #from pymongo import MongoClient
 from resources.styles import styles
 from time import sleep
@@ -11,7 +11,7 @@ RESET=styles.RESET
 FAILURE=styles.FAILURE
 
 """ 
-url=environ['mongoUrl']
+url=mongoUrl
 myclient=MongoClient(url)
 
 database=myclient["CasinoDatabase"]
@@ -19,6 +19,7 @@ members=database["CasinoMembers"]
 """
 
 """
+
 def getRank(id):
 	member=members.find_one({ "id": id })
 	if member != None:
@@ -48,7 +49,6 @@ def getID(id):
 	if id_new != "":
 		member = open("./member.json", "r")
 		return load(member)
-		# ! for offline use OR testing purposes
 		"""
 		member=members.find_one({ "id": id_new})
 		
