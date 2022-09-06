@@ -1,0 +1,6 @@
+__pycache__
+.vscode
+poetry.lock
+referenceforbj.txt
+higherorlowerref.txt
+notes.txt
