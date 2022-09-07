@@ -4,8 +4,6 @@ from os import system, name
 from blackjack import blackjack
 from higherorlower import higherorlower
 
-# VARIABLES
-
 # CLEAR FUNCTION
 
 def clear():
